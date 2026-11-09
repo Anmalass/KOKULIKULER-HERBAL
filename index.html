@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d32">
+  <title>HERBALORA — Modern Herbal Drinks</title>
+  <meta name="description" content="Rencana bisnis minuman herbal kekinian untuk proyek kokurikuler. Resep, bahan, tutorial, modal, harga jual, dan kalkulator usaha.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="announcement">PROYEK KOKURIKULER • INOVASI TANAMAN HERBAL INDONESIA</div>
+  <header class="site-header">
+    <a class="brand" href="#home"><span class="brand-mark">H</span><span>HERBALORA<small>BOTANICAL DRINK LAB</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+    <nav id="nav">
+      <a href="#menu">Menu</a><a href="#business">Rencana bisnis</a><a href="#workflow">Alur produksi</a><a href="#about">Tentang proyek</a>
+    </nav>
+    <a class="header-cta" href="#business">Lihat hitungan ↗</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><i></i> NATURAL INGREDIENTS, MODERN TASTE</span>
+        <h1>Tanaman lokal.<br><em>Rasa luar biasa.</em></h1>
+        <p>Eksplorasi tanaman herbal menjadi minuman segar yang menarik, mudah dibuat, dan punya peluang usaha. Dirancang untuk tim kokurikuler di Langensari, Kota Banjar.</p>
+        <div class="hero-actions"><a class="button primary" href="#menu">Jelajahi menu <span>↓</span></a><a class="button secondary" href="#business">Hitung peluang usaha</a></div>
+        <div class="hero-proof"><div><strong>05</strong><span>resep pilihan</span></div><div><strong>2–3</strong><span>bahan utama lokal</span></div><div><strong>100%</strong><span>bisa disesuaikan</span></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image"></div>
+        <div class="floating-note"><span class="note-icon">✿</span><div><b>From plant to cup</b><small>Herbal drinks, reimagined.</small></div></div>
+        <div class="round-stamp">LOCAL<br>BOTANICAL<br>GOODNESS</div>
+      </div>
+    </section>
+
+    <section class="ticker"><span>HERBAL • FRESH • LOCAL • CREATIVE • HERBAL • FRESH • LOCAL • CREATIVE •</span></section>
+
+    <section class="section intro" id="menu">
+      <div class="section-heading"><div><span class="eyebrow">THE DRINK COLLECTION</span><h2>Menu yang punya <em>cerita.</em></h2></div><p>Lima racikan dengan karakter berbeda. Takaran di bawah adalah resep percobaan untuk 2 gelas ukuran ±250 ml. Uji rasa dahulu sebelum produksi jualan.</p></div>
+      <div class="filter-row"><span>JELAJAHI RACIKAN</span><div class="filters"><button class="filter active" data-filter="all">Semua</button><button class="filter" data-filter="floral">Floral</button><button class="filter" data-filter="spice">Rempah</button><button class="filter" data-filter="fresh">Fresh</button></div></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="business-section" id="business">
+      <div class="section-heading light"><div><span class="eyebrow">SMALL BUSINESS PLAYBOOK</span><h2>Racik rasa, <em>hitung cuan.</em></h2></div><p>Simulasi awal untuk 10 gelas per menu. Angka adalah estimasi belajar, bukan harga toko yang sudah diverifikasi. Ganti HPP dan harga jual sesuai struk belanja kelompok.</p></div>
+      <div class="business-stats">
+        <article class="stat-card"><span>MODAL PRODUKSI / 50 GELAS</span><strong id="capitalStat">Rp250.000</strong><small>HPP × jumlah produksi</small></article>
+        <article class="stat-card"><span>POTENSI OMZET</span><strong id="revenueStat">Rp500.000</strong><small>Jika seluruh gelas terjual</small></article>
+        <article class="stat-card highlight"><span>LABA KOTOR POTENSIAL</span><strong id="profitStat">Rp250.000</strong><small>Omzet − modal produksi</small></article>
+      </div>
+      <div class="dashboard">
+        <div class="panel table-panel">
+          <div class="panel-title"><div><span class="eyebrow">PRICE & COST</span><h3>Atur harga jual</h3></div><span class="live-tag">● Bisa diedit</span></div>
+          <p class="panel-desc">Ubah jumlah gelas, HPP per gelas, atau harga jual untuk melihat simulasi berubah otomatis.</p>
+          <div class="table-wrap"><table><thead><tr><th>Produk</th><th>Jumlah</th><th>HPP/gelas</th><th>Jual/gelas</th><th>Laba kotor</th></tr></thead><tbody id="financeRows"></tbody></table></div>
+          <div class="tip-box"><b>Tips tim:</b> HPP sebaiknya mencakup bahan, cup/botol, tutup, sedotan, label, dan es. Tambahkan biaya transportasi atau gas jika digunakan.</div>
+        </div>
+        <div class="panel chart-panel"><div class="panel-title"><div><span class="eyebrow">VISUAL REPORT</span><h3>Perbandingan laba</h3></div></div><canvas id="profitChart" height="220"></canvas><div class="chart-legend-note">Estimasi laba kotor per menu berdasarkan jumlah produksi yang dipilih.</div></div>
+      </div>
+      <div class="dashboard second">
+        <div class="panel chart-panel"><div class="panel-title"><div><span class="eyebrow">COST COMPOSITION</span><h3>Ke mana modal pergi?</h3></div></div><canvas id="costChart" height="230"></canvas><div class="chart-legend-note">Komposisi modal produksi seluruh menu.</div></div>
+        <div class="panel calculator-panel">
+          <span class="eyebrow">QUICK SIMULATOR</span><h3>Target produksi kelompok</h3>
+          <label for="cupsInput">Jumlah gelas per menu</label><div class="stepper"><button id="minusCups">−</button><input id="cupsInput" type="number" min="1" max="500" value="10"><button id="plusCups">+</button></div>
+          <div class="sim-result"><div><span>Total gelas</span><b id="totalCups">50 gelas</b></div><div><span>Modal produksi</span><b id="simCapital">Rp250.000</b></div><div><span>Omzet jika habis</span><b id="simRevenue">Rp500.000</b></div><div class="result-total"><span>Potensi laba kotor</span><b id="simProfit">Rp250.000</b></div></div>
+          <button class="button primary full" id="printPlan">Cetak ringkasan rencana ↗</button>
+        </div>
+      </div>
+      <p class="disclaimer">Catatan: laba kotor belum dikurangi tenaga kerja, listrik/gas, transportasi, produk gagal, dan biaya lain. Jangan menetapkan harga final sebelum survei harga bahan di Langensari dan uji rasa.</p>
+    </section>
+
+    <section class="section workflow" id="workflow">
+      <div class="section-heading"><div><span class="eyebrow">FROM IDEA TO SELLING</span><h2>Alur kerja <em>kelompok.</em></h2></div><p>Bagi peran supaya semua anggota paham prosesnya, dari memilih tanaman sampai menghitung hasil penjualan.</p></div>
+      <div class="workflow-grid">
+        <article><span>01</span><div class="work-icon">🌱</div><h3>Kenali bahan</h3><p>Pastikan tanaman teridentifikasi benar, bagian yang digunakan memang pangan, dan bahan bersih serta layak konsumsi.</p></article>
+        <article><span>02</span><div class="work-icon">🧺</div><h3>Belanja & ukur</h3><p>Belanja bahan yang mudah ditemukan di pasar/warung Langensari. Simpan struk untuk menghitung HPP nyata.</p></article>
+        <article><span>03</span><div class="work-icon">🥤</div><h3>Produksi & uji rasa</h3><p>Ikuti takaran, jaga kebersihan alat, catat hasil, lalu minta masukan rasa dari teman/guru.</p></article>
+        <article><span>04</span><div class="work-icon">📊</div><h3>Hitung & presentasi</h3><p>Catat biaya, harga jual, jumlah terjual, omzet, dan laba. Jelaskan juga keunikan tanaman herbal.</p></article>
+      </div>
+      <div class="local-box"><div class="local-icon">📍</div><div><b>Strategi belanja Langensari, Kota Banjar</b><p>Prioritaskan jahe, kunyit, serai, jeruk nipis, gula aren, madu, dan es dari pasar/warung sekitar. Bunga telang dan rosella kering mungkin perlu dicari di toko herbal atau dibeli online. Ketersediaan dan harga wajib dicek langsung sebelum hari produksi.</p></div></div>
+    </section>
+
+    <section class="closing" id="about"><div class="closing-flower">✿</div><span class="eyebrow">OUR SCHOOL PROJECT</span><h2>Herbal Indonesia,<br><em>dibuat lebih dekat.</em></h2><p>HERBALORA adalah konsep proyek kokurikuler: mengenal tanaman, belajar mengolah bahan pangan, bekerja dalam tim, dan memahami dasar kewirausahaan.</p><a class="button light-button" href="#menu">Kembali ke menu ↑</a><small class="footer-note">HERBALORA • DRAFT PROYEK KOKURIKULER • LANGENSARI, BANJAR</small></section>
+  </main>
+
+  <div class="modal" id="recipeModal" aria-hidden="true"><div class="modal-backdrop" data-close></div><article class="modal-card"><button class="modal-close" data-close aria-label="Tutup">×</button><div id="modalContent"></div></article></div>
+  <footer><span>© 2026 HERBALORA</span><span>Made with plants & teamwork 🌿</span><a href="#home">Kembali ke atas ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>
